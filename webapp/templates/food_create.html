@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Добавить блюдо{% endblock %}
+{% block content %}
+    <form action="{% url 'webapp:food_create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+{% endblock %}

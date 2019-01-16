@@ -1,0 +1,12 @@
+<h5>Данные заказа:</h5>
+<p>Контактный телефон: {{ order.contact_phone }}</p>
+<p>Имя: {{ order.contact_name }}</p>
+<p>Адрес доставки: {{ order.delivery_address }}</p>
+<p>Статус заказа: {{ order.get_status_display }}</p>
+<p>Оператор: {{ order.operator }}</p>
+<p>Курьер: {{ order.courier }}</p>
+<h5>Заказанные блюда:</h5>
+{% for order_food in order.foods.all %}
+    <p>Блюдо: {{ order_food.food.name }}, {{ order_food.amount }} шт.</p>
+
+{% endfor %}

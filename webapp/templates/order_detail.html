@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Заказ{% endblock %}
+{% block content %}
+    <h3>Заказ №{{ order.pk }}</h3>
+    {% if perms.webapp.is_operator %}
+        <a href="{% url 'webapp:order_update' order.pk %}">Изменить заказ</a><br>
+    {% elif perms.webapp.is_courier %}
+        <a href="{% url 'webapp:order_courier_update' order.pk %}"></a><br><br>
+    {% endif %}
+    {% include 'order_detail_page.html' %}
+    <button type="button" data-toggle="modal" data-target="#food-add-dialog">Добавить блюда</button>
+
+
+    <div class="modal" id='food-add-dialog' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'webapp:order_food_create' order.pk %}" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Сохранить</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock scripts %}

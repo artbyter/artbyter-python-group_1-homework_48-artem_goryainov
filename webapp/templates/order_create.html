@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Добавить заказ{% endblock %}
+
+{% block content %}
+    <form action="{% url 'webapp:order_create' %}" method="post">
+        {% csrf_token %}
+        {{ formset.media }}
+        {{ form.as_p }}
+        {{ request.messages }}
+        {% for form in formset %}
+            <hr>
+            <div class="ml-5">
+                {{ form.as_p }}
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+{% endblock %}
+

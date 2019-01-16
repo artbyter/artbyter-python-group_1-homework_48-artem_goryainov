@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Изменить заказ{% endblock %}
+
+{% block content %}
+
+    {% if perms.webapp.is_courier %}
+        <form action="{% url 'webapp:order_courier_update' order.pk %}" method="post">
+        {% csrf_token %}
+        {% include 'order_detail_page.html' %}
+        <br>
+        {% if order.get_status_display == 'Готовится' %}
+            <button type="submit" class="btn btn-primary">Взять заказ</button>
+        {% elif if_own_order and order.get_status_display == 'В пути' %}
+            <button type="submit" class="btn btn-primary">Завершить заказ</button>
+        {% endif %}
+
+    {% elif perms.webapp.is_operator %}
+        {% if order.get_status_display == "Доставлен" or order.get_status_display == 'В пути' %}
+            <h2>Заказ уже доставляется или доставлен</h2>
+        {% else %}
+            <form action="{% url 'webapp:order_update' order.pk %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+
+            <table>
+                <thead>
+                <tr>
+
+                    <th>Блюдо</th>
+                    <th>Количество</th>
+                    <th>Удалить</th>
+                </tr>
+                </thead>
+                {% for order_food in order.foods.all %}
+                    <tr>
+                    <td>{{ order_food.food.name }}</td>
+                    <td>{{ order_food.amount }}</td>
+                    <td><a href="{% url 'webapp:order_food_delete'  order_food.pk %}"><i
+                            class="fas fa-user-times"></i></a></td>
+                {% endfor %}
+            </table>
+            <br>
+            <a href="{% url 'webapp:order_food_create' order.pk %}">Добавить блюда</a>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        {% endif %}
+
+    </form>
+    {% endif %}
+{% endblock %}

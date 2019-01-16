@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Блюдо{% endblock %}
+{% block content %}
+    <div class="col-sm-6 pl-0">
+        <div class="card ">
+            <div class="card-header p-0">
+                <a class=" nav-item nav-link active d-inline-block float-right " href="{% url 'webapp:food_edit' food.pk %}"><i
+                        class="fas fa-user-edit"></i></a>
+                <a class="nav-item nav-link active d-inline-block float-right" href="{% url 'webapp:food_delete' food.pk %}"><i
+                        class="fas fa-user-times"></i></a>
+            </div>
+            <div class="card-body">
+                <h3>{{ food.name }}</h3>
+                <p>{{ food.description }}</p>
+                <img class="float-left card-img-top " src="{{ food.photo.url }}" alt="Картинка еды">
+                <h6 class="mt-3">Цена: {{ food.price }} с.</h6>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{# Откройте /food/<pk>, чтобы посмотреть картинку еды на этой странице #}

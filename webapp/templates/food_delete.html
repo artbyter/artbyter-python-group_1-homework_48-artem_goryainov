@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Удалить блюдо{% endblock title %}
+
+{% block content %}
+
+    <form action="{% url "webapp:food_delete" food.pk %}" method="post">
+        {% csrf_token %}
+
+        <h2>Вы действительно хотите удалить блюдо {{ food.name }}?</h2>
+
+        <div>
+            <input class="btn btn-link"
+                   type="button" value="Отменить"
+                   onclick="window.history.go(-1);"/>
+            <input class="btn btn-link" type="submit" value="Подтвердить"/>
+        </div>
+        <br>
+
+    </form>
+
+{% endblock content %}
