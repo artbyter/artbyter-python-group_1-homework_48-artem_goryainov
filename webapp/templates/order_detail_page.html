@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <h5>Данные заказа:</h5>
 <p>Контактный телефон: {{ order.contact_phone }}</p>
 <p>Имя: {{ order.contact_name }}</p>
@@ -6,7 +7,20 @@
 <p>Оператор: {{ order.operator }}</p>
 <p>Курьер: {{ order.courier }}</p>
 <h5>Заказанные блюда:</h5>
-{% for order_food in order.foods.all %}
-    <p>Блюдо: {{ order_food.food.name }}, {{ order_food.amount }} шт.</p>
+<div id="food_list">
+    {% for order_food in order.foods.all %}
+        {#        <p>Блюдо: {{ order_food.food.name }}, {{ order_food.amount }} шт.#}
+        {#            <a href="{% url 'webapp:order_food_update'  order_food.pk %}">#}
+        {#                <i class="fas fa-user-edit"></i></a>#}
+        {#            <a href="{% url 'webapp:order_food_delete'  order_food.pk %}"><i#}
+        {#                    class="fas fa-user-times"></i></a></p>#}
 
-{% endfor %}
+        <p>Блюдо: <span id="'order_food_name_{{ order_food.pk }}" data-food_pk="{{ order_food.food.pk }}">{{ order_food.food.name }}</span>,
+            <span id="order_food_amount_{{ order_food.pk }}">{{ order_food.amount }}</span> шт.
+            <a href="{% url 'webapp:order_food_update'  order_food.pk %}" class="edit_link fas fa-user-edit" data-pk="{{ order_food.pk }}">
+                </a>
+            <a href="{% url 'webapp:order_food_delete'  order_food.pk %}" class="fas fa-user-times"></a></p>
+        </p>
+    {% endfor %}
+</div>
+<script type="application/javascript" src="{% static 'js/main.js' %}"></script>

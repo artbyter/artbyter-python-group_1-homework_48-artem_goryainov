@@ -1,10 +1,11 @@
 from django.views.generic import DetailView, CreateView, UpdateView, View, DeleteView, ListView, FormView
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from webapp.models import Food, Order, OrderFood
 from webapp.forms import FoodForm, OrderForm, OrderFoodForm, OrderCourierForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.db.models import Q
+from django.shortcuts import get_object_or_404
 
 
 class InitialView(LoginRequiredMixin, View):
@@ -72,7 +73,7 @@ class OrdersCourierListView(LoginRequiredMixin, PermissionRequiredMixin, ListVie
         return queryset
 
 
-class OrderDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView,FormView):
+class OrderDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView, FormView):
     model = Order
     template_name = 'order_detail.html'
     permission_required = 'webapp.view_order'
@@ -154,13 +155,55 @@ class OrderFoodCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateVie
         return super().form_valid(form)
 
 
+class OrderFoodAjaxCreateView(CreateView):
+    model = OrderFood
+    form_class = OrderFoodForm
+
+    def form_valid(self, form):
+        order = get_object_or_404(Order, pk=self.kwargs.get('pk'))
+        form.instance.order = order
+        order_food = form.save()
+        return JsonResponse({
+            'food_name': order_food.food.name,
+            'amount': order_food.amount,
+            'order_pk': order_food.order.pk,
+            'food_pk': order_food.food.pk,
+            'pk': order_food.pk,
+            'edit_url': reverse('webapp:order_food_update', kwargs={'pk': order_food.pk}),
+        })
+
+    def form_invalid(self, form):
+        return JsonResponse({
+            'errors': form.errors
+        }, status='422')
+
+
+class OrderFoodAjaxUpdateView(UpdateView):
+    model = OrderFood
+    form_class = OrderFoodForm
+    print('In OrderFoodAjaxUpdateView')
+    def form_valid(self, form):
+        order_food = form.save()
+        return JsonResponse({
+            'food_name': order_food.food.name,
+            'food_pk': order_food.food.pk,
+            'amount': order_food.amount,
+            'pk': order_food.pk
+        })
+
+    def form_invalid(self, form):
+        return JsonResponse({
+            'errors': form.errors
+        }, status='422')
+
+
 class OrderFoodDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = OrderFood
     template_name = 'order_food_delete.html'
     permission_required = 'webapp.delete_food'
 
     def post(self, request, *args, **kwargs):
-        if request.POST.get('delete')=='no':
+        if request.POST.get('delete') == 'no':
             url = self.get_success_url()
             return HttpResponseRedirect(url)
         else:

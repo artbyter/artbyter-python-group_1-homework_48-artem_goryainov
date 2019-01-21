@@ -1,7 +1,7 @@
 from django.urls import path
 from webapp.views import FoodDetailView, OrderDetailView, OrderCreateView, FoodCreateView, OrderUpdateView, \
     OrderFoodCreateView, FoodUpdateView, FoodDeleteView, OrderFoodDeleteView, OrdersListView, FoodListView, \
-    OrderCourierUpdateView,OrdersCourierListView,InitialView
+    OrderCourierUpdateView, OrdersCourierListView, InitialView, OrderFoodAjaxCreateView,OrderFoodAjaxUpdateView
 
 app_name = 'webapp'
 
@@ -18,6 +18,7 @@ urlpatterns = [
     path('order/create', OrderCreateView.as_view(), name='order_create'),
     path('order/<int:pk>/update', OrderUpdateView.as_view(), name='order_update'),
     path('order/<int:pk>/courier_update', OrderCourierUpdateView.as_view(), name='order_courier_update'),
-    path('order/<int:pk>/food/create', OrderFoodCreateView.as_view(), name='order_food_create'),
+    path('order/<int:pk>/food/create', OrderFoodAjaxCreateView.as_view(), name='order_food_create'),
     path('order/<int:pk>/food/delete', OrderFoodDeleteView.as_view(), name='order_food_delete'),
+    path('order/food/<int:pk>/update', OrderFoodAjaxUpdateView.as_view(), name='order_food_update'),
 ]

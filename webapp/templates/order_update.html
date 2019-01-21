@@ -24,25 +24,7 @@
             {{ form.as_p }}
 
 
-            <table>
-                <thead>
-                <tr>
 
-                    <th>Блюдо</th>
-                    <th>Количество</th>
-                    <th>Удалить</th>
-                </tr>
-                </thead>
-                {% for order_food in order.foods.all %}
-                    <tr>
-                    <td>{{ order_food.food.name }}</td>
-                    <td>{{ order_food.amount }}</td>
-                    <td><a href="{% url 'webapp:order_food_delete'  order_food.pk %}"><i
-                            class="fas fa-user-times"></i></a></td>
-                {% endfor %}
-            </table>
-            <br>
-            <a href="{% url 'webapp:order_food_create' order.pk %}">Добавить блюда</a>
             <button type="submit" class="btn btn-primary">Сохранить</button>
         {% endif %}
 

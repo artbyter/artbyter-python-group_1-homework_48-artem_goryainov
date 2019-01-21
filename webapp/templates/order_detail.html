@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block title %}Заказ{% endblock %}
 {% block content %}
     <h3>Заказ №{{ order.pk }}</h3>
@@ -7,8 +8,29 @@
     {% elif perms.webapp.is_courier %}
         <a href="{% url 'webapp:order_courier_update' order.pk %}"></a><br><br>
     {% endif %}
-    {% include 'order_detail_page.html' %}
-    <button type="button" data-toggle="modal" data-target="#food-add-dialog">Добавить блюда</button>
+    <h5>Данные заказа:</h5>
+    <p>Контактный телефон: {{ order.contact_phone }}</p>
+    <p>Имя: {{ order.contact_name }}</p>
+    <p>Адрес доставки: {{ order.delivery_address }}</p>
+    <p>Статус заказа: {{ order.get_status_display }}</p>
+    <p>Оператор: {{ order.operator }}</p>
+    <p>Курьер: {{ order.courier }}</p>
+    <h5>Заказанные блюда:</h5>
+    <div id="food_list">
+        {% for order_food in order.foods.all %}
+
+
+            <p id="order_food_{{ order_food.pk }}">Блюдо: <span id="order_food_name_{{ order_food.pk }}"
+                                                                data-food_pk="{{ order_food.food.pk }}">{{ order_food.food.name }}</span>,
+                <span id="order_food_amount_{{ order_food.pk }}">{{ order_food.amount }}</span> шт.
+                <a href="{% url 'webapp:order_food_update'  order_food.pk %}" class="edit_link"
+                   data-pk="{{ order_food.pk }}"><i class=" fas fa-user-edit"></i>
+                </a>
+                <a href="{% url 'webapp:order_food_delete'  order_food.pk %}" class="fas fa-user-times"></a></p>
+            </p>
+        {% endfor %}
+    </div>
+    <button type="button" id="order_food_add">Добавить блюда</button>
 
 
     <div class="modal" id='food-add-dialog' tabindex="-1" role="dialog">
@@ -21,15 +43,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{% url 'webapp:order_food_create' order.pk %}" method="post">
+                    <div class="text-danger" id="food_form_errors"></div>
+                    <form id="food_form" action="{% url 'webapp:order_food_create' order.pk %}" method="post"
+                          onsubmit="return false">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button type="submit" class="btn btn-primary">Сохранить</button>
+
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary" id="food_submit">Save changes</button>
                 </div>
             </div>
         </div>
@@ -39,5 +63,8 @@
 {% endblock %}
 
 {% block scripts %}
+    <script type="application/javascript" src="{% static 'js/main.js' %}">
 
+
+    </script>
 {% endblock scripts %}
