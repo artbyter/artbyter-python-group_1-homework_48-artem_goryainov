@@ -1,5 +1,149 @@
 [
 {
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "webapp",
+    "model": "employee"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "webapp",
+    "model": "order"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "webapp",
+    "model": "food"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "webapp",
+    "model": "orderfood"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "0q640ltxa42layp88ftrjr3glhczeasu",
+  "fields": {
+    "session_data": "ODgzYzZlODdlZWY5Y2MxMjM5ZTgyZjI4ZmU4MjBjNzQzMjE3ODJhODp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmODcxZjU3YzM5MDEyYmVjNGFhZWFmZDY4MThhOWIxMjQ1ZmYwMzI1In0=",
+    "expire_date": "2019-01-25T02:58:04.456Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "32eno8do45rqxgzn29uq57wafbwafydy",
+  "fields": {
+    "session_data": "ZTBmMzQ3NmFiNTE1M2QxZmFlNTgyOWFkMzhlNzI5NWZmMDY5OTc1Mjp7fQ==",
+    "expire_date": "2019-01-09T02:57:58.177Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ejdienazhesikpt3qc2nxq8nkw01gkzo",
+  "fields": {
+    "session_data": "ODgzYzZlODdlZWY5Y2MxMjM5ZTgyZjI4ZmU4MjBjNzQzMjE3ODJhODp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmODcxZjU3YzM5MDEyYmVjNGFhZWFmZDY4MThhOWIxMjQ1ZmYwMzI1In0=",
+    "expire_date": "2019-01-09T04:40:55.079Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ig459e5gfl0u91hecpbgk6n9e9ywtb0l",
+  "fields": {
+    "session_data": "MTY3ZTkzODBmMGQzMWRhY2QyZWJjMjdkMjUzMjE1NTUzNzkzYzFmODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI1OTNhOGE0MWIzNTg4ZTFkMzk4NTA0ODEzZGZjNjNmMGE5YTk2Nzc2In0=",
+    "expire_date": "2019-01-07T04:27:05.067Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mqw5kiryxizk1hqg149s1hhppkeoascy",
+  "fields": {
+    "session_data": "ZGVkMTlkMzJjMmMxNzZkODE3YTRlMDA5ZWIwNGE1ZThlZDFkOThhNTp7Il9hdXRoX3VzZXJfaWQiOiI0IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI5MDQ2YzM0NjVmYjRkNWMwMzUzYjNjOGMyN2UzNjE0ZTQ1NjE4MjM2In0=",
+    "expire_date": "2019-01-09T12:25:42.409Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "o460oh9ycfhi8d3o1l1k30n2nyrppqmr",
+  "fields": {
+    "session_data": "ODgzYzZlODdlZWY5Y2MxMjM5ZTgyZjI4ZmU4MjBjNzQzMjE3ODJhODp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmODcxZjU3YzM5MDEyYmVjNGFhZWFmZDY4MThhOWIxMjQ1ZmYwMzI1In0=",
+    "expire_date": "2019-01-28T03:34:21.806Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "sbn5k5kcgz9b7tx1iqnoa97ikt2cawwl",
+  "fields": {
+    "session_data": "ODgzYzZlODdlZWY5Y2MxMjM5ZTgyZjI4ZmU4MjBjNzQzMjE3ODJhODp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmODcxZjU3YzM5MDEyYmVjNGFhZWFmZDY4MThhOWIxMjQ1ZmYwMzI1In0=",
+    "expire_date": "2019-01-10T05:59:31.048Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vno56bj4obdeiik4hi4cfxavxnljiqdl",
+  "fields": {
+    "session_data": "ZTBmMzQ3NmFiNTE1M2QxZmFlNTgyOWFkMzhlNzI5NWZmMDY5OTc1Mjp7fQ==",
+    "expire_date": "2019-01-09T02:58:56.871Z"
+  }
+},
+{
   "model": "webapp.food",
   "pk": 3,
   "fields": {
@@ -156,6 +300,24 @@
     "order": 8,
     "food": 9,
     "amount": 1
+  }
+},
+{
+  "model": "webapp.orderfood",
+  "pk": 22,
+  "fields": {
+    "order": 3,
+    "food": 7,
+    "amount": 3
+  }
+},
+{
+  "model": "webapp.orderfood",
+  "pk": 23,
+  "fields": {
+    "order": 10,
+    "food": 3,
+    "amount": 3
   }
 },
 {
@@ -770,7 +932,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$120000$r0Uj1A61pPiH$08gZHHTM1xEqmuERgrJzIAo3Bcvvjh3xyynRgwstY2U=",
-    "last_login": "2018-12-26T11:13:31.265Z",
+    "last_login": "2019-01-14T03:31:08.025Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -788,7 +950,7 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$120000$4DUJxawlgR16$nugIz182UsXTMPWwJXYQCSOJYWp3iP3zw030QUy7Dvk=",
-    "last_login": "2018-12-27T05:59:31.017Z",
+    "last_login": "2019-01-14T03:34:21.784Z",
     "is_superuser": false,
     "username": "Vasya_operator",
     "first_name": "Vasya",
@@ -869,6 +1031,46 @@
       ]
     ],
     "user_permissions": []
+  }
+},
+{
+  "model": "webapp.employee",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "Vasya_operator"
+    ],
+    "phone": "+10239810212"
+  }
+},
+{
+  "model": "webapp.employee",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "Petya_operator"
+    ],
+    "phone": "+10239810214"
+  }
+},
+{
+  "model": "webapp.employee",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "Petya_courier"
+    ],
+    "phone": "+20239810212"
+  }
+},
+{
+  "model": "webapp.employee",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "Vasya_courier"
+    ],
+    "phone": "+20239810214"
   }
 },
 {
@@ -1014,43 +1216,283 @@
   }
 },
 {
-  "model": "webapp.employee",
-  "pk": 1,
+  "model": "webapp.order",
+  "pk": 10,
   "fields": {
-    "user": [
+    "contact_phone": "+996777374928",
+    "contact_name": "Client 3",
+    "delivery_address": "asjd asd a sda sdasd",
+    "status": 0,
+    "operator": [
       "Vasya_operator"
     ],
-    "phone": "+10239810212"
+    "courier": null
   }
 },
 {
-  "model": "webapp.employee",
+  "model": "webapp.order",
+  "pk": 11,
+  "fields": {
+    "contact_phone": "+99734678223",
+    "contact_name": "Client 3",
+    "delivery_address": "asd asd asd asd as",
+    "status": 0,
+    "operator": [
+      "Vasya_operator"
+    ],
+    "courier": null
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2018-12-25T07:45:44.386Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "operators",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
   "pk": 2,
   "fields": {
+    "action_time": "2018-12-25T07:48:56.371Z",
     "user": [
-      "Petya_operator"
+      "admin"
     ],
-    "phone": "+10239810214"
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "2",
+    "object_repr": "couriers",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
   }
 },
 {
-  "model": "webapp.employee",
+  "model": "admin.logentry",
   "pk": 3,
   "fields": {
+    "action_time": "2018-12-25T08:00:04.543Z",
     "user": [
-      "Petya_courier"
+      "admin"
     ],
-    "phone": "+20239810212"
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "Vasya_admin",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"employee\", \"object\": \"\"}}]"
   }
 },
 {
-  "model": "webapp.employee",
+  "model": "admin.logentry",
   "pk": 4,
   "fields": {
+    "action_time": "2018-12-25T08:00:50.379Z",
     "user": [
-      "Vasya_courier"
+      "admin"
     ],
-    "phone": "+20239810214"
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "Vasya_operator",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"username\", \"first_name\", \"email\", \"groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2018-12-25T08:07:59.189Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "Petya_operator",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"employee\", \"object\": \"\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2018-12-25T08:08:18.702Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "Petya_operator",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"email\", \"groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2018-12-25T08:08:51.934Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "Petya_courier",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"employee\", \"object\": \"\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2018-12-25T08:09:22.468Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "Petya_courier",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"email\", \"groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2018-12-25T08:09:42.941Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "Vasya_courier",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"employee\", \"object\": \"\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2018-12-25T08:09:51.668Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "Vasya_courier",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2018-12-25T09:27:30.518Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "Vasya_courier",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"email\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2018-12-25T10:44:33.735Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "operators",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2018-12-25T10:44:46.644Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "2",
+    "object_repr": "couriers",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2018-12-25T16:20:29.995Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "webapp",
+      "order"
+    ],
+    "object_id": "2",
+    "object_repr": "+996777374929",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"status\"]}}]"
   }
 }
 ]
